@@ -34,7 +34,7 @@ namespace ConsoleApp1 {
             Console.WriteLine($"--- Dados da Conta ---\n{conta}");
 
             Console.WriteLine();
-            Console.Write("Valor do depósito: ");
+            Console.Write("Valor do depósito: R$ ");
             double deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             conta.Deposito(deposito);
             chave = Guid.NewGuid().ToString().Substring(0, 8);
@@ -48,7 +48,7 @@ namespace ConsoleApp1 {
             
 
             Console.WriteLine();
-            Console.Write("Valor do saque: ");
+            Console.Write("Valor do saque: R$ ");
             double saque = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             conta.Saque(saque);
             chave = Guid.NewGuid().ToString().Substring(0, 8);

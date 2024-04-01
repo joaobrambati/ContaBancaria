@@ -40,8 +40,8 @@ namespace ConsoleApp1 {
                    + Numero
                    + "\nTitular: "
                    + Nome
-                   + "\nSaldo: R$ "
-                   + Saldo.ToString("F2", CultureInfo.InvariantCulture)
+                   + "\nSaldo: "
+                   + Saldo.ToString("C", CultureInfo.CreateSpecificCulture("pt-BR"))
                    + "\nChave: "
                    + Chave
                    + "\n"
