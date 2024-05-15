@@ -2,7 +2,7 @@
 using System.Globalization;
 
 namespace ConsoleApp1 {
-    internal class Conta {
+    public class Conta {
 
         public int Numero {  get; private set; }
         public string Nome {  get; private set; }
@@ -10,14 +10,14 @@ namespace ConsoleApp1 {
         public string Chave { get; private set; }
         public DateTime Comprovante { get; private set; }
 
-        public Conta(int numero, string nome, string chave, DateTime comprovante) {
+        public Conta(int numero, string nome) {
             Numero = numero;
             Nome = nome;
-            Chave = chave;
-            Comprovante = comprovante;
+            Chave = Guid.NewGuid().ToString().Substring(0, 8);
+            Comprovante = DateTime.Now;
         }
-        public Conta(int numero, string nome, string chave, DateTime comprovante, double depositoInicial) 
-        :this(numero, nome, chave, comprovante) {
+        public Conta(int numero, string nome, double depositoInicial) 
+        :this(numero, nome) {
             Saldo = depositoInicial;
         }
 
@@ -28,11 +28,11 @@ namespace ConsoleApp1 {
             Saldo -= saque+5.0;
         }
 
-        public void Guid(string chave) {
-            Chave = chave;
+        public void AtualizarGuid() {
+            Chave = Guid.NewGuid().ToString().Substring(0, 8);
         }
-        public void Data(DateTime comprovante) {
-            Comprovante = comprovante;
+        public void AtualizarData() {
+            Comprovante = DateTime.Now;
         }
 
         public override string ToString() {
